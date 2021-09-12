@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "bufio"
+  "os"
+)
+
 
 func main() {
-  fmt.Println("hello world")
+  fmt.Println("What is your name?")
+
+  scanner := bufio.NewScanner(os.Stdin)
+  scanner.Scan()
+
+  name := scanner.Text()
+
+  fmt.Println("Hello, " + name + ", nice to meet you!")
 }
