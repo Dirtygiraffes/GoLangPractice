@@ -1,12 +1,20 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "strings"
+  "bufio"
+  "os"
+)
 
 func main() {
   fmt.Println("What is the input string?")
-  var input string
 
-  fmt.Scan(&input)
+  scanner := bufio.NewScanner(os.Stdin)
+  scanner.Scan()
+  input := scanner.Text()
 
-  fmt.Println("Work in progress")
+  inputSliced := strings.Split(input, "")
+
+  fmt.Printf(input + " has %d characters.", len(inputSliced))
 }
